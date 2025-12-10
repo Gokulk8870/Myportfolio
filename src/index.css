@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Designer Portfolio Design System - Soft Pastel & Minimal */
+
+@layer base {
+  :root {
+    /* Base colors - soft white with warmth */
+    --background: 0 0% 99%;
+    --foreground: 240 8% 20%;
+
+    /* Pastel accent colors */
+    --pastel-peach: 15 100% 85%;
+    --pastel-lavender: 260 60% 85%;
+    --pastel-mint: 160 60% 85%;
+    --pastel-pink: 340 80% 88%;
+    --pastel-blue: 200 70% 88%;
+
+    /* Card styling */
+    --card: 0 0% 100%;
+    --card-foreground: 240 8% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 8% 20%;
+
+    /* Primary - soft lavender */
+    --primary: 260 60% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - soft peach */
+    --secondary: 15 100% 92%;
+    --secondary-foreground: 240 8% 20%;
+
+    /* Muted elements */
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    /* Accent - soft mint */
+    --accent: 160 60% 88%;
+    --accent-foreground: 240 8% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 260 60% 70%;
+
+    --radius: 1rem;
+
+    /* Gradient definitions */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--pastel-lavender)) 0%, hsl(var(--pastel-pink)) 50%, hsl(var(--pastel-peach)) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+    --gradient-accent: linear-gradient(120deg, hsl(var(--pastel-mint)) 0%, hsl(var(--pastel-blue)) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 10px 40px -10px hsl(260 60% 70% / 0.15);
+    --shadow-hover: 0 20px 50px -10px hsl(260 60% 70% / 0.25);
+    --shadow-glass: 0 8px 32px 0 hsl(260 60% 70% / 0.1);
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Gradient backgrounds */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  /* Glass effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Fade in animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  /* Scale in animation */
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-scaleIn {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    @apply transition-smooth;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Soft shadows */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glass {
+    box-shadow: var(--shadow-glass);
+  }
+}
