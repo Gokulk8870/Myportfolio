@@ -1,4 +1,4 @@
-import profileImage from "@/assets/profile.jpg";
+import profileImage from "@/assets/myimage.pngg";
 import { Heart, Sparkles, Palette } from "lucide-react";
 
 const About = () => {
