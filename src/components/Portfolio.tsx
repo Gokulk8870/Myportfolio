@@ -33,7 +33,7 @@ const projects = [
     github: "https://github.com/Gokulk8870",
     demo: null,
   },
-];}
+];
 
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<
