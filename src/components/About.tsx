@@ -1,5 +1,4 @@
-import profileImage from "../../myimage.png";
-
+import profileImage from "@/assets/myimage.png";
 import { Heart, Sparkles, Palette } from "lucide-react";
 
 const About = () => {
@@ -26,13 +25,15 @@ const About = () => {
                 Software Solutions
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Dedicated aspiring software engineer with expertise in web development,
-                database-driven applications, and problem-solving. Currently pursuing MCA at
-                KGiSL Institute (CGPA: 8.2) with a B.Sc in Computer Science (CGPA: 7.8).
+                Dedicated aspiring software engineer with expertise in web
+                development, database-driven applications, and problem-solving.
+                Currently pursuing MCA at KGiSL Institute (CGPA: 8.2) with a
+                B.Sc in Computer Science (CGPA: 7.8).
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Completed a 3-month internship at KG Gensys Lab, developing enterprise billing
-                software with Laravel and MySQL. Quick learner with strong analytical and teamwork skills.
+                Completed a 3-month internship at KG Gensys Lab, developing
+                enterprise billing software with Laravel and MySQL. Quick
+                learner with strong analytical and teamwork skills.
               </p>
 
               <div className="grid grid-cols-3 gap-6 pt-6">
