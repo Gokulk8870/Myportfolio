@@ -177,4 +177,45 @@
   .shadow-glass {
     box-shadow: var(--shadow-glass);
   }
+
+    /* Dark Mode Styles */
+  .dark {
+      --background: 30 27% 3%;
+      --foreground: 60 10% 95%;
+      /* Pastel accent colors - darker shades for dark mode */
+      --pastel-peach: 25 100% 62%;
+      --pastel-lavender: 260 60% 65%;
+      --pastel-mint: 160 60% 60%;
+      --pastel-pink: 340 100% 65%;
+      --pastel-blue: 280 70% 60%;
+      /* Card styling */
+      --card: 30 25% 10%;
+      --card-foreground: 60 10% 95%;
+      /* Popover */
+      --popover: 30 25% 10%;
+      --popover-foreground: 60 10% 95%;
+      /* Primary - soft lavender for dark */
+      --primary: 260 60% 65%;
+      --primary-foreground: 30 27% 3%;
+      /* Secondary - soft peach for dark */
+      --secondary: 25 100% 62%;
+      --secondary-foreground: 30 27% 3%;
+      /* Muted */
+      --muted: 30 25% 30%;
+      --muted-foreground: 60 10% 75%;
+      /* Accent */
+      --accent: 160 60% 60%;
+      --accent-foreground: 30 27% 3%;
+      /* Destructive */
+      --destructive: 0 84% 60%;
+      --destructive-foreground: 60 10% 95%;
+      /* Border */
+      --border: 30 25% 20%;
+      /* Input */
+      --input: 30 25% 15%;
+      /* Ring */
+      --ring: 260 66% 70%;
+      /* Radius */
+      --radius: 1rem;
+    }
 }
