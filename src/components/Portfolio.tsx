@@ -4,9 +4,6 @@ import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import project1 from "@/assets/project1.jpg";
-import project2 from "@/assets/project2.jpg";
-import project3 from "@/assets/project3.jpg";
-import project4 from "@/assets/project4.jpg";
 
 const projects = [
   {
@@ -18,18 +15,6 @@ const projects = [
     image: project1,
     tags: ["Laravel", "MySQL", "PHP", "GitHub", "MVC"],
     color: "bg-pastel-lavender",
-    github: "https://github.com/Gokulk8870",
-    demo: null,
-  },
-  {
-    id: 2,
-    title: "Personal Portfolio Website",
-    category: "Frontend Project",
-    description:
-      "A responsive portfolio website built with React and TypeScript, featuring modern UI design with Tailwind CSS and smooth animations. Showcases projects, skills, and professional experience.",
-    image: project2,
-    tags: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    color: "bg-pastel-pink",
     github: "https://github.com/Gokulk8870",
     demo: null,
   },

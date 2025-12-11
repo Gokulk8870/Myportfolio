@@ -1,4 +1,4 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-bg.jpg";
 
@@ -8,6 +8,13 @@ const Hero = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const downloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/cv.pdf';
+    link.download = '24MCA26 Gokul K.pdf';
+    link.click();
   };
 
   return (
@@ -53,6 +60,15 @@ const Hero = () => {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 text-lg shadow-soft hover-lift"
               >
                 Get In Touch
+              </Button>
+              <Button
+                onClick={downloadCV}
+                size="lg"
+                variant="outline"
+                className="rounded-full px-8 text-lg border-2 border-primary/30 hover:border-primary hover:bg-primary/10 flex items-center gap-2"
+              >
+                <Download className="w-5 h-5" />
+                Download CV
               </Button>
               <Button
                 onClick={() => {
