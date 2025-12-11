@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 import profileImage from "@/assets/myimage.png";
-=======
-import profileImage from "../../myimage.png";
-
->>>>>>> 01e51b2ee183ce62753326e99e254ddc68bedc0b
 import { Heart, Sparkles, Palette } from "lucide-react";
 
 const About = () => {
