@@ -53,6 +53,7 @@ const Hero = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Sathyamangalam, Erode
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 onClick={scrollToContact}
@@ -65,7 +66,7 @@ const Hero = () => {
                 onClick={downloadCV}
                 size="lg"
                 variant="outline"
-                className="rounded-full px-8 text-lg border-2 border-primary/30 hover:border-primary hover:bg-primary/10 flex items-center gap-2"
+                className="hidden md:flex rounded-full px-8 text-lg border-2 border-primary/30 hover:border-primary hover:bg-primary/10 flex items-center gap-2"
               >
                 <Download className="w-5 h-5" />
                 Download CV
