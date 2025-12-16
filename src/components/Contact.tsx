@@ -21,6 +21,9 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Google Apps Script Web App URL - Replace with your deployed URL
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/d/AKfycbx3gurOwjE9ZndWTL-fmgQgRGhxw3-EJ8TGWjoDTjk1bxEExfuyejTDYpYa6bl1M7Pp/usercontent";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -46,39 +49,34 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Using FormSubmit.co with hash-based endpoint for real email delivery
-      const formPayload = new FormData();
-      formPayload.append("name", formData.name.trim());
-      formPayload.append("email", formData.email.trim());
-      formPayload.append("message", formData.message.trim());
-      formPayload.append("_captcha", "false");
-      formPayload.append("_template", "table");
-      formPayload.append("_subject", `New message from ${formData.name}`);
+      // Send data directly to Google Sheets via Apps Script
+      const payload = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        message: formData.message.trim(),
+      };
 
-      const response = await fetch(
-        "https://formsubmit.co/5025b197a3c5cf9ae767ab21ab011c3d",
-        {
-          method: "POST",
-          body: formPayload,
-        }
-      );
+      const response = await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", // Required for Netlify static hosting
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
-      if (response.ok) {
-        toast({
-          title: "Message Sent! 🎉",
-          description: "Thank you for reaching out. I'll get back to you soon!",
-        });
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        const errorText = await response.text();
-        console.error("FormSubmit error:", response.status, errorText);
-        toast({
-          title: "Error",
-          description: "Failed to send message. Please try again or email directly.",
-        });
-      }
+      // With no-cors mode, we can't check response.ok directly
+      // So we show success message and assume it worked if fetch didn't throw
+      toast({
+        title: "Message Sent! 🎉",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
+
+      // Clear form on success
+      setFormData({ name: "", email: "", message: "" });
+
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Error sending message:", error);
       toast({
         title: "Error",
         description: "Failed to send message. Please check your connection and try again.",
