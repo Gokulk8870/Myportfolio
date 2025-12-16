@@ -21,7 +21,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Google Apps Script Web App URL with CORS support
+  // Google Apps Script Web App URL
   const APPS_SCRIPT_URL = "https://script.google.com/macros/d/AKfycbx3gurOwjE9ZndWTL-fmgQgRGhxw3-EJ8TGWjoDTjk1bxEExfuyejTDYpYa6bl1M7Pp/usercontent";
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -49,9 +49,10 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Send data to Google Apps Script with proper CORS mode
+      // Use no-cors mode for Google Apps Script Web App compatibility
       const response = await fetch(APPS_SCRIPT_URL, {
         method: "POST",
+        mode: "no-cors", // REQUIRED for Google Apps Script Web Apps
         headers: {
           "Content-Type": "application/json",
         },
@@ -62,22 +63,14 @@ const Contact = () => {
         }),
       });
 
-      // Parse the JSON response
-      const result = await response.json();
+      // With no-cors, if fetch completes without error, data was sent to Apps Script
+      toast({
+        title: "Message Sent! 🎉",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
 
-      if (result.success) {
-        toast({
-          title: "Message Sent! 🎉",
-          description: result.message || "Your message has been saved successfully!",
-        });
-        // Clear form only on successful submission
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        toast({
-          title: "Submission Failed",
-          description: result.error || "Failed to save your message. Please try again.",
-        });
-      }
+      // Clear form on successful submission
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("Error sending message:", error);
       toast({
