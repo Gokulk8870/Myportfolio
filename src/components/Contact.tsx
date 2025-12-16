@@ -5,7 +5,6 @@ import {
   Send,
   Github,
   Linkedin,
-  Twitter,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,14 +19,50 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent! 🎉",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      // Using FormSubmit.co for email delivery
+      const formPayload = new FormData();
+      formPayload.append("name", formData.name);
+      formPayload.append("email", formData.email);
+      formPayload.append("message", formData.message);
+      formPayload.append("_captcha", "false");
+      formPayload.append("_template", "table");
+
+      const response = await fetch(
+        "https://formsubmit.co/gokulgokul4457@gmail.com",
+        {
+          method: "POST",
+          body: formPayload,
+        }
+      );
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent! 🎉",
+          description: "Thank you for reaching out. I'll get back to you soon!",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again.",
+        });
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socialLinks = [
@@ -59,7 +94,7 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <Card className="p-8 md:p-12 rounded-3xl border-0 shadow-soft animate-scaleIn">
-            <form method="POST" name="contact" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold mb-2">
                   Your Name
@@ -67,7 +102,7 @@ const Contact = () => {
                 <Input
                   type="text"
                   placeholder="John Doe"
-            name="name"
+                  name="name"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -83,7 +118,7 @@ const Contact = () => {
                 <Input
                   type="email"
                   placeholder="john@example.com"
-            name="email"
+                  name="email"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -98,7 +133,7 @@ const Contact = () => {
                 </label>
                 <Textarea
                   placeholder="Tell me about your project..."
-            name="message"
+                  name="message"
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -109,10 +144,11 @@ const Contact = () => {
               </div>
               <Button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full py-6 text-lg shadow-soft hover-lift"
               >
                 <Send className="w-5 h-5 mr-2" />
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>
@@ -131,7 +167,9 @@ const Contact = () => {
                 gokulgokul4457@gmail.com
               </a>
               <p className="text-muted-foreground mt-2">
-                <a href="tel:+916380531946" className="hover:text-primary">+91 6380531946</a>
+                <a href="tel:+916380531946" className="hover:text-primary">
+                  +91 6380531946
+                </a>
               </p>
             </Card>
 
