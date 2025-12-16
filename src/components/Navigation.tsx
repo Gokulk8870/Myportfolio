@@ -102,18 +102,6 @@ const Navigation = () => {
                 </button>
               ))}
               <Button
-                onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = "/resume.pdf";
-                  link.download = "Gokul_K_Resume.pdf";
-                  link.click();
-                }}
-                variant="outline"
-                className="rounded-full w-full border-2 border-primary/30 hover:border-primary hover:bg-primary/10"
-              >
-                Download CV
-              </Button>
-              <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setTheme(theme === "light" ? "dark" : "light")}
