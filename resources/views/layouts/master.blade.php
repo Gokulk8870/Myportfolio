@@ -18,9 +18,8 @@
 
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMDMyYjAwIi8+PHJlY3QgeD0iNiIgeT0iOCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIiIGZpbGw9IiM0YmJjNDMiLz48cmVjdCB4PSI2IiB5PSIxMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIiIGZpbGw9IiM0YmJjNDMiLz48cmVjdCB4PSI2IiB5PSIxNiIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIGZpbGw9IiM0YmJjNDMiLz48cmVjdCB4PSI2IiB5PSIyMCIgd2lkdGg9IjE0IiBoZWlnaHQ9IjIiIGZpbGw9IiM0YmJjNDMiLz48Y2lyY2xlIGN4PSIyNCIgY3k9IjI0IiByPSIzIiBmaWxsPSIjNGJiYzQzIi8+PC9zdmc+">
-    <link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMDMyYjAwIi8+PHJlY3QgeD0iNiIgeT0iOCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIiIGZpbGw9IiM0YmJjNDMiLz48cmVjdCB4PSI2IiB5PSIxMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIiIGZpbGw9IiM0YmJjNDMiLz48cmVjdCB4PSI2IiB5PSIxNiIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIGZpbGw9IiM0YmJjNDMiLz48cmVjdCB4PSI2IiB5PSIyMCIgd2lkdGg9IjE0IiBoZWlnaHQ9IjIiIGZpbGw9IiM0YmJjNDMiLz48Y2lyY2xlIGN4PSIyNCIgY3k9IjI0IiByPSIzIiBmaWxsPSIjNGJiYzQzIi8+PC9zdmc+">
-
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23032b00'/%3E%3Crect x='6' y='10' width='20' height='14' rx='1' fill='none' stroke='%234bbc43' stroke-width='2'/%3E%3Crect x='9' y='10' width='14' height='2' fill='%234bbc43'/%3E%3Ccircle cx='16' cy='17' r='2' fill='%234bbc43'/%3E%3C/svg%3E">
+<link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23032b00'/%3E%3Crect x='6' y='10' width='20' height='14' rx='1' fill='none' stroke='%234bbc43' stroke-width='2'/%3E%3Crect x='9' y='10' width='14' height='2' fill='%234bbc43'/%3E%3Ccircle cx='16' cy='17' r='2' fill='%234bbc43'/%3E%3C/svg%3E">
 <style>
     * {
         margin: 0;
