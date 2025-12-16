@@ -21,7 +21,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Google Apps Script Web App URL - Replace with your deployed URL
+  // Google Apps Script Web App URL with CORS support
   const APPS_SCRIPT_URL = "https://script.google.com/macros/d/AKfycbx3gurOwjE9ZndWTL-fmgQgRGhxw3-EJ8TGWjoDTjk1bxEExfuyejTDYpYa6bl1M7Pp/usercontent";
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -49,36 +49,39 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Send data directly to Google Sheets via Apps Script
-      const payload = {
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        message: formData.message.trim(),
-      };
-
+      // Send data to Google Apps Script with proper CORS mode
       const response = await fetch(APPS_SCRIPT_URL, {
         method: "POST",
-        mode: "no-cors", // Required for Netlify static hosting
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+        }),
       });
 
-      // With no-cors mode, we can't check response.ok directly
-      // So we show success message and assume it worked if fetch didn't throw
-      toast({
-        title: "Message Sent! 🎉",
-        description: "Thank you for reaching out. I'll get back to you soon!",
-      });
+      // Parse the JSON response
+      const result = await response.json();
 
-      // Clear form on success
-      setFormData({ name: "", email: "", message: "" });
-
+      if (result.success) {
+        toast({
+          title: "Message Sent! 🎉",
+          description: result.message || "Your message has been saved successfully!",
+        });
+        // Clear form only on successful submission
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast({
+          title: "Submission Failed",
+          description: result.error || "Failed to save your message. Please try again.",
+        });
+      }
     } catch (error) {
       console.error("Error sending message:", error);
       toast({
-        title: "Error",
+        title: "Network Error",
         description: "Failed to send message. Please check your connection and try again.",
       });
     } finally {
