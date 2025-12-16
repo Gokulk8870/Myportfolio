@@ -22,7 +22,8 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Google Apps Script Web App URL - Replace with your deployed URL
-  const APPS_SCRIPT_URL = "https://script.google.com/macros/d/AKfycbx3gurOwjE9ZndWTL-fmgQgRGhxw3-EJ8TGWjoDTjk1bxEExfuyejTDYpYa6bl1M7Pp/usercontent";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/d/AKfycbx3gurOwjE9ZndWTL-fmgQgRGhxw3-EJ8TGWjoDTjk1bxEExfuyejTDYpYa6bl1M7Pp/usercontent";
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
