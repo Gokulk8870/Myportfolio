@@ -59,7 +59,7 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <Card className="p-8 md:p-12 rounded-3xl border-0 shadow-soft animate-scaleIn">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form method="POST" name="contact" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold mb-2">
                   Your Name
@@ -67,6 +67,7 @@ const Contact = () => {
                 <Input
                   type="text"
                   placeholder="John Doe"
+            name="name"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -82,6 +83,7 @@ const Contact = () => {
                 <Input
                   type="email"
                   placeholder="john@example.com"
+            name="email"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -96,6 +98,7 @@ const Contact = () => {
                 </label>
                 <Textarea
                   placeholder="Tell me about your project..."
+            name="message"
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
