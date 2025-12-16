@@ -85,11 +85,11 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <Card
               key={skill.title}
-              className={`p-8 rounded-3xl border-0 shadow-soft hover-lift transition-smooth ${skill.color}/10`}
+              className={`p-8 rounded-3xl border-0 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer ${skill.color}/10`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div
-                className={`w-16 h-16 ${skill.color}/30 rounded-2xl flex items-center justify-center mb-6`}
+                className={`w-16 h-16 ${skill.color}/30 rounded-2xl flex items-center justify-center mb-6 shadow-md`}
               >
                 <skill.icon className="w-8 h-8 text-primary" />
               </div>
@@ -107,7 +107,7 @@ const Skills = () => {
             {tools.map((tool, index) => (
               <div
                 key={tool}
-                className="px-6 py-3 glass rounded-full font-medium hover-lift transition-smooth"
+                className="px-6 py-3 glass rounded-full font-medium hover-lift transition-all duration-300 shadow-md hover:shadow-lg"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 {tool}
