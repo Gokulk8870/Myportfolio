@@ -23,19 +23,40 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Input validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast({
+        title: "Validation Error",
+        description: "Please fill in all fields.",
+      });
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      // Using FormSubmit.co for email delivery
+      // Using FormSubmit.co with hash-based endpoint for real email delivery
       const formPayload = new FormData();
-      formPayload.append("name", formData.name);
-      formPayload.append("email", formData.email);
-      formPayload.append("message", formData.message);
+      formPayload.append("name", formData.name.trim());
+      formPayload.append("email", formData.email.trim());
+      formPayload.append("message", formData.message.trim());
       formPayload.append("_captcha", "false");
       formPayload.append("_template", "table");
+      formPayload.append("_subject", `New message from ${formData.name}`);
 
       const response = await fetch(
-        "https://formsubmit.co/gokulgokul4457@gmail.com",
+        "https://formsubmit.co/5025b197a3c5cf9ae767ab21ab011c3d",
         {
           method: "POST",
           body: formPayload,
@@ -49,16 +70,18 @@ const Contact = () => {
         });
         setFormData({ name: "", email: "", message: "" });
       } else {
+        const errorText = await response.text();
+        console.error("FormSubmit error:", response.status, errorText);
         toast({
           title: "Error",
-          description: "Failed to send message. Please try again.",
+          description: "Failed to send message. Please try again or email directly.",
         });
       }
     } catch (error) {
       console.error("Error sending email:", error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
+        description: "Failed to send message. Please check your connection and try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -111,6 +134,7 @@ const Contact = () => {
                   required
                 />
               </div>
+
               <div>
                 <label className="block text-sm font-semibold mb-2">
                   Email Address
@@ -127,6 +151,7 @@ const Contact = () => {
                   required
                 />
               </div>
+
               <div>
                 <label className="block text-sm font-semibold mb-2">
                   Your Message
@@ -142,6 +167,7 @@ const Contact = () => {
                   required
                 />
               </div>
+
               <Button
                 type="submit"
                 disabled={isSubmitting}
