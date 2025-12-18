@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23032b00'/%3E%3Crect x='6' y='10' width='20' height='14' rx='1' fill='none' stroke='%234bbc43' stroke-width='2'/%3E%3Crect x='9' y='10' width='14' height='2' fill='%234bbc43'/%3E%3Ccircle cx='16' cy='17' r='2' fill='%234bbc43'/%3E%3C/svg%3E">
+
 <link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23032b00'/%3E%3Crect x='6' y='10' width='20' height='14' rx='1' fill='none' stroke='%234bbc43' stroke-width='2'/%3E%3Crect x='9' y='10' width='14' height='2' fill='%234bbc43'/%3E%3Ccircle cx='16' cy='17' r='2' fill='%234bbc43'/%3E%3C/svg%3E">
 <style>
     * {
