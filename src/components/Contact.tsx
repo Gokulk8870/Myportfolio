@@ -99,13 +99,13 @@ const Contact = () => {
             Get In Touch
           </span>
           <h2 className="text-5xl font-bold mt-4 mb-6">
-            Let's Create Something{" "}
+            Let's Build Something Great{" "}
             <span className="bg-gradient-to-r from-primary to-pastel-pink bg-clip-text text-transparent">
-              Amazing
+              Together
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? Let's talk and make it happen together!
+            Have a project idea, internship opportunity, or software development role? Feel free to reach out. I'm always interested in discussing technology, software development, and new opportunities.
           </p>
         </div>
 
