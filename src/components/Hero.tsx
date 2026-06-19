@@ -12,7 +12,7 @@ const Hero = () => {
 
     const downloadCV = () => {
         const link = document.createElement("a");
-        link.href = "/Gokul_K_Software_Developer.pdf";
+        link.href = "/PortFolio_Resume.pdf";
         link.download = "Gokul_K_Software_Developer.pdf";
         link.click();
     };
@@ -48,7 +48,8 @@ const Hero = () => {
                             Gokul K
                         </h1>
                         <p className="text-2xl md:text-3xl text-muted-foreground mb-8 font-light">
-                            Aspiring Software Developer | Laravel Developer | Full Stack Web Developer
+                            Aspiring Software Developer | Laravel Developer |
+                            Full Stack Web Developer
                         </p>
                         <p className="text-lg text-muted-foreground mb-8">
                             Erode, Tamil Nadu
@@ -72,8 +73,12 @@ const Hero = () => {
                             </Button>
                             <Button
                                 onClick={() => {
-                                    const element = document.getElementById("portfolio");
-                                    if (element) element.scrollIntoView({ behavior: "smooth" });
+                                    const element =
+                                        document.getElementById("portfolio");
+                                    if (element)
+                                        element.scrollIntoView({
+                                            behavior: "smooth",
+                                        });
                                 }}
                                 size="lg"
                                 variant="outline"

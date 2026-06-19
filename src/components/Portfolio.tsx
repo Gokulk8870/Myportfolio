@@ -131,46 +131,7 @@ function useInView(threshold = 0.12) {
 const projects = [
     {
         id: 1,
-        title: "Egg Shop Billing & Inventory Management System",
-        category: "Full Stack — Laravel • PHP • MySQL",
-        description:
-            "A full-stack business management application developed to automate billing, inventory tracking, employee management, and sales reporting processes.",
-        image: project1,
-        accentColor: "#8B5CF6",
-        tags: [
-            "Laravel",
-            "PHP",
-            "MySQL",
-            "JavaScript",
-            "jQuery",
-            "Bootstrap",
-            "Git",
-            "GitHub",
-        ],
-        features: [
-            "Role-Based Authentication",
-            "Inventory Management",
-            "Billing & Invoice Generation",
-            "Employee Management",
-            "Customer Management",
-            "Sales Tracking",
-            "Reporting Dashboard",
-            "Automatic Stock Updates",
-        ],
-        credentials: [
-            { role: "Admin", email: "admin@gmail.com", password: "12345678" },
-            {
-                role: "Employee",
-                email: "employee@gmail.com",
-                password: "12345678",
-            },
-        ],
-        github: "https://github.com/Gokulk8870/eggshop",
-        demo: "https://eggshop.onrender.com",
-    },
-    {
-        id: 2,
-        title: "Billing & Inventory Management System",
+        title: "Billing & Inventory Management System for a Garment Sector",
         category: "Full Stack — Laravel • PHP • MySQL",
         description:
             "A comprehensive web-based billing and inventory management application developed for garment and retail businesses. The system automates billing, stock management, customer handling, employee management, and business reporting to improve operational efficiency and accuracy.",
@@ -219,6 +180,46 @@ const projects = [
 
         demo: "https://johnsbilling.free.je/",
     },
+    {
+        id: 2,
+        title: "Egg Shop Billing & Inventory Management System",
+        category: "Full Stack — Laravel • PHP • MySQL",
+        description:
+            "A full-stack business management application developed to automate billing, inventory tracking, employee management, and sales reporting processes.",
+        image: project1,
+        accentColor: "#bdd054",
+        tags: [
+            "Laravel",
+            "PHP",
+            "MySQL",
+            "JavaScript",
+            "jQuery",
+            "Bootstrap",
+            "Git",
+            "GitHub",
+        ],
+        features: [
+            "Role-Based Authentication",
+            "Inventory Management",
+            "Billing & Invoice Generation",
+            "Employee Management",
+            "Customer Management",
+            "Sales Tracking",
+            "Reporting Dashboard",
+            "Automatic Stock Updates",
+        ],
+        credentials: [
+            { role: "Admin", email: "admin@gmail.com", password: "12345678" },
+            {
+                role: "Employee",
+                email: "employee@gmail.com",
+                password: "12345678",
+            },
+        ],
+        github: "https://github.com/Gokulk8870/eggshop",
+        demo: "https://eggshop.onrender.com",
+    },
+
     {
         id: 3,
         title: "Notes Management Application",
