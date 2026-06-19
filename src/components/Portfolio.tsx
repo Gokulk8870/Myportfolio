@@ -171,7 +171,7 @@ const projects = [
         credentials: [
             {
                 role: "Admin",
-                email: "[admin@gmail.com](mailto:admin@gmail.com)",
+                email: "[admin@gmail.com]",
                 password: "12345678",
             },
         ],
