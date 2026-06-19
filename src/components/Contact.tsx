@@ -17,7 +17,7 @@ const Contact = () => {
 
     // Google Apps Script Web App URL
     const APPS_SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbzAZ-S9dZVcfipCSd6BLvsiHCqCoyFUdClZj3Ns7Hx7MohR-9Z1aCW_YW8VnKfswmxqWg/exec";
+        "https://script.google.com/macros/s/AKfycbwjnjgGbNW_QwxgaC3W6MkaDrWaYUzUEbNkmWbVypXKWujbhCn1JrJoXhRUbDrJbTQyKA/exec";
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
